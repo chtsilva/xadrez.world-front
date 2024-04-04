@@ -1,15 +1,17 @@
-import { Box, Paper, Typography, styled } from "@mui/material"
+import { Paper, Typography, styled } from "@mui/material"
 import Grid from "@mui/material/Unstable_Grid2"
+import Link from 'next/link'
+
 
 export const MenuContainer = () => {
   return (
     <MenuContainerStyled container justifyContent="center">
-      <MenuItem text="Pagina principal" linkTo="" />
-      <MenuItem text="Partidas" linkTo="" />
-      <MenuItem text="Forum" linkTo="" />
-      <MenuItem text="Pagina segundaria" linkTo="" />
-      <MenuItem text="Pagina terceira" linkTo="" />
-      <MenuItem text="Pagina fake" linkTo="" />
+      <MenuItem text="Pagina principal" linkTo="/" />
+      <MenuItem text="Partidas" linkTo="/match" />
+      <MenuItem text="Forum" linkTo="/" />
+      <MenuItem text="Pagina segundaria" linkTo="/" />
+      <MenuItem text="Pagina terceira" linkTo="/" />
+      <MenuItem text="Pagina fake" linkTo="/" />
     </MenuContainerStyled>
   )
 }
@@ -24,7 +26,9 @@ const MenuItem = ({ text, linkTo }: IMenuItem) => {
     <Grid container padding={1} sx={{ cursor: "pointer" }} justifyContent="center" alignItems="center">
       <Grid >
         <Item >
-          <Typography>{text}</Typography>
+          <Link href={linkTo}>
+            <Typography>{text}</Typography>
+          </Link>
         </Item>
       </Grid>
     </Grid>

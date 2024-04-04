@@ -10,10 +10,26 @@ export const roboto = Roboto({
 
 
 export const MaterialTheme = createTheme({
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          fontSize: "1rem",
+
+        },
+        containedPrimary: ({ theme }) => ({
+          color: theme.palette.primary.main,
+          backgroundColor: theme.palette.secondary.main
+          
+        })
+      }
+    }
+  },
   palette: {
     primary: {
       light: "#0E2030",
       main: '#283A48',
+      dark: "#FFF"
     },
     secondary: {
       main: '#19857b',
@@ -22,7 +38,7 @@ export const MaterialTheme = createTheme({
       main: red.A400,
     },
     text: {
-      primary: "white",
+      primary: "#cecece",
     }
   },
   typography: {
