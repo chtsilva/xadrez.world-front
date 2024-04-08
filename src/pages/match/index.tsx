@@ -1,6 +1,5 @@
-import { Layout } from "@/components/Layout"
+import { Layout } from "@/components/layout"
 import { MatchComponent } from "@/components/Match"
-import Grid from "@mui/material/Unstable_Grid2"
 
 export default function Match() {
   return (

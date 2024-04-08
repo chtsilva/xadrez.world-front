@@ -8,7 +8,6 @@ export const roboto = Roboto({
   display: 'swap',
 });
 
-
 export const MaterialTheme = createTheme({
   components: {
     MuiButton: {
@@ -20,7 +19,14 @@ export const MaterialTheme = createTheme({
         containedPrimary: ({ theme }) => ({
           color: theme.palette.primary.main,
           backgroundColor: theme.palette.secondary.main
-          
+
+        })
+      }
+    },
+    MuiMenu: {
+      styleOverrides: {
+        paper: ({ theme }) => ({
+          background: theme.palette.primary.main,
         })
       }
     }

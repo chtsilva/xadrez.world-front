@@ -1,6 +1,8 @@
 import { styled } from "@mui/material";
 import Grid from '@mui/material/Unstable_Grid2';
 import { MenuContainer } from "./Menu";
+import { LogoComponent } from "./Logo";
+import { UserMenuComponent } from "./User";
 
 interface ILayout {
   children: React.ReactElement;
@@ -12,11 +14,11 @@ export const Layout = ({ children }: ILayout) => {
       <Grid container sx={{ height: "20vh", backgroundColor: "#BCBCBC", maxWidth: "100vw" }} >
         {/* Header */}
       </Grid>
-      <Grid container>
-        {/* LOGO */}
+      <MenuContainerStyled container justifyContent="center">
+        <LogoComponent />
         <MenuContainer />
-        {/* LOGIN */}
-      </Grid>
+        <UserMenuComponent />
+      </MenuContainerStyled>
       <Grid sx={{ flexGrow: 1 }}>
         <ContainerChildren container justifyContent="center"  >
           <GridChildren>
@@ -27,6 +29,10 @@ export const Layout = ({ children }: ILayout) => {
     </Grid>
   )
 }
+const MenuContainerStyled = styled(Grid)(({ theme }) => ({
+  background: theme.palette.primary.main,
+  flexGrow: 1,
+}))
 
 const ContainerChildren = styled(Grid)(({ theme }) => ({
   flexGrow: 1,

@@ -1,4 +1,4 @@
-import { Layout } from "@/components/Layout";
+import { Layout } from "@/components/layout";
 import { Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 

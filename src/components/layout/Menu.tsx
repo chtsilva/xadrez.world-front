@@ -5,14 +5,14 @@ import Link from 'next/link'
 
 export const MenuContainer = () => {
   return (
-    <MenuContainerStyled container justifyContent="center">
+    <Grid container justifyContent="center" sx={{ flexGrow: 1 }}>
       <MenuItem text="Pagina principal" linkTo="/" />
       <MenuItem text="Partidas" linkTo="/match" />
       <MenuItem text="Forum" linkTo="/" />
       <MenuItem text="Pagina segundaria" linkTo="/" />
       <MenuItem text="Pagina terceira" linkTo="/" />
       <MenuItem text="Pagina fake" linkTo="/" />
-    </MenuContainerStyled>
+    </Grid>
   )
 }
 
@@ -43,8 +43,3 @@ const Item = styled(Paper)(({ theme }) => ({
     filter: "brightness(1.3)",
   }
 }));
-
-const MenuContainerStyled = styled(Grid)(({ theme }) => ({
-  background: theme.palette.primary.main,
-  flexGrow: 1,
-}))
